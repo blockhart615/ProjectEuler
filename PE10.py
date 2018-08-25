@@ -1,6 +1,4 @@
-#part2
-import math
-from math import sqrt
+# Project Euler Problem 10
 
 #checks if a number is prime or not
 def is_prime(num):
@@ -9,19 +7,19 @@ def is_prime(num):
     elif num % 2 == 0:
         return False
     else:
-        for i in range(3,math.ceil(sqrt(num)) + 1, 2):
+        for i in range(3, int(math.ceil(sqrt(num))) + 1, 2):
             if num % i == 0:
                 return False  
         return True
 
-#Generator that gets prime numbers
+# Generator that gets prime numbers
 def get_primes(num):
     while True:
         if is_prime(num):
             yield num
         num += 1
 
-#sums the list of primes
+# sums the list of primes
 def sum_primes(start):
     nextPrime = get_primes(start)
     LIMIT = 2000000  #LIMIT is the number we are generating up to
@@ -30,13 +28,11 @@ def sum_primes(start):
         num = next(nextPrime)
         if num < LIMIT:
             sum += num
-    print("THE SUM IS: ", sum)
+    print "THE SUM IS: ", sum
     
 
 
 def main():
-    #print("Which number would you like to start from?")
-    #start = input()
     sum_primes(2)
     
 
