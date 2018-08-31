@@ -24,7 +24,7 @@ GRID[18] = [20, 73, 35, 29, 78, 31, 90,  1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 
 GRID[19] = [ 1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48]
 
 
-def findPositiveDiagonalProd(grid, row, col):
+def find_positive_diagonal_prod(grid, row, col):
     if row > 16 or col > 16:
         return 0
 
@@ -33,7 +33,7 @@ def findPositiveDiagonalProd(grid, row, col):
         prod *= grid[row+i][col+i]
     return prod
 
-def findNegativeDiagonalProd(grid, row, col):
+def find_negative_diagonal_prod(grid, row, col):
     if row > 16 or col < 3:
         return 0
 
@@ -43,7 +43,7 @@ def findNegativeDiagonalProd(grid, row, col):
     return prod
 
 
-def findLeftRightProd(grid, row, col):
+def find_leftright_prod(grid, row, col):
     if col > 16:
         return 0
 
@@ -53,7 +53,7 @@ def findLeftRightProd(grid, row, col):
     return prod
 
     
-def findUpDownProd(grid, row, col):
+def find_leftright_prod(grid, row, col):
     if row > 16:
         return 0
 
@@ -69,10 +69,10 @@ def findLargestProd(grid):
     for row in range(0, SIZE, 1):
         for col in range(0, SIZE, 1):
             
-            posDiagonalProd = findPositiveDiagonalProd(grid, row, col)
-            negDiagonalProd = findNegativeDiagonalProd(grid, row, col)
-            upDownProd = findUpDownProd(grid, row, col)
-            leftRightProd = findLeftRightProd(grid, row, col)
+            posDiagonalProd = find_positive_diagonal_prod(grid, row, col)
+            negDiagonalProd = find_negative_diagonal_prod(grid, row, col)
+            upDownProd = find_leftright_prod(grid, row, col)
+            leftRightProd = findLefind_leftright_prodftRightProd(grid, row, col)
 
             currMax = max([posDiagonalProd, negDiagonalProd, upDownProd, leftRightProd])
             print "currMax is ", currMax
